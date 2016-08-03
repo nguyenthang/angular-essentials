@@ -1,0 +1,18 @@
+{
+  "name": "angular-essentials",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Thang Nguyen <Thang.Nguyen@gbst.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/libs",
+    "test",
+    "tests"
+  ]
+}

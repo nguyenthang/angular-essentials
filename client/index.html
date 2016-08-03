@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="parking" ng-controller="parkingController">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{{appTitle}}</title>
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+	<div ng-include="'views/partials/menu.html'"></div>
+	<div ng-view></div>
+	<div ng-include="'views/partials/footer.html'"></div>
+	<script type="text/javascript" src="libs/angular/angular.min.js"></script>
+	<script type="text/javascript" src="libs/angular-route/angular-route.min.js"></script>
+	<script type="text/javascript" src="libs/angular-sanitize/angular-sanitize.min.js"></script>
+
+	<script type="text/javascript" src="routes/appRoute.js"></script>
+
+	<script type="text/javascript" src="controllers/parkingController.js"></script>
+	<script type="text/javascript" src="directives/parkingDirective.js"></script>
+</body>
+</html>
