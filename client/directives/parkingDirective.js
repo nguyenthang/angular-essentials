@@ -1,3 +1,4 @@
+'use strict';
 parkingApp.directive('alert', function(){
 	return {
 		restrict: 'E',
