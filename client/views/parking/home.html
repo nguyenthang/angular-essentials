@@ -1,0 +1,78 @@
+<div class="container">
+<h3 ng-bind-html="appTitle"></h3>
+	<div>
+		<div ng-show="cars.length > 0">
+		<div class="row">
+			<div class="container">
+				<div class="form-group">
+				<input type="text" class="form-control" ng-model="criteria" placeholder="What are you looking for?">		
+				</div>		
+			</div>
+		</div>
+		<table class="table table-bordered">				
+			<thead>					
+				<tr>
+					<th></th>
+					<th>
+					<a href=""ng-click="field = 'plate'; order=!order">Plate</a>
+					</th>
+					<th>Color</th>
+					<th>Entrance</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="car in cars | filter:criteria | orderBy:field:order" ng-class="{selected: car.selected}">
+					<td><input type="checkbox" ng-model="car.selected"></td>
+					<td>
+						<a href="#/car/{{car.id}}">
+							<span ng-bind="car.plate | limitTo: 10"></span>
+						</a>
+					</td>
+					<td><span ng-bind="car.color" ng-style="{color: car.color}"></span> </td>
+					<td><span ng-bind="car.entrance | date"></span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div ng-hide="cars.length > 0" class="alert alert-warning">			
+			Warning! The parking lot is empty			
+	</div>
+		
+		<alert 
+		ng-show="showAlert" 
+		close="closeAlert()"
+		description="alertDescription" 
+		topic="alertTopic"></alert>
+		
+		<!--<accordion>
+		<accordion-item title="MMM-8790">
+		White - 10/10/2002 10:00
+		</accordion-item>
+		<accordion-item title="ABC-9954">
+		Black - 10/10/2002 10:36
+		</accordion-item>
+		<accordion-item title="XYZ-9768">
+		Blue - 10/10/2002 11:10
+		</accordion-item>
+		</accordion>-->
+
+		<div class="row">
+			<form class="form-inline" name="carForm">
+				<div class="form-group">
+					<label for="">Plate</label>
+					<input type="text" class="form-control" ng-model="car.plate" name="plateField" placeholder="What's the plate?" ng-required="true" ng-minlength="3">
+					<alert ng-show="carForm.plateField.$invalid" topic="Something went wrong">	
+					The plate is invalid.
+				</div>
+				<div class="form-group">
+					<label for="">Color</label>
+					<select ng-model="car.color" class="form-control" ng-options="color for color in colors">
+					Pick a color				
+			</select>
+				</div>
+				<button type="button" class="btn btn-default" ng-click="park(car)" ng-disabled="!car.plate">Park</button>
+			</form>
+			
+		</div>
+	</div>	
+</div>
