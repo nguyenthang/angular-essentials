@@ -80,7 +80,7 @@ parkingApp.factory("parkingHttpFacade", function($http){
 	};
 
 	return {
-		getCars : _getCar,
+		getCars : _getCars,
 		getCar: _getCar,
 		saveCar: _saveCar,
 		updateCar: _updateCar,

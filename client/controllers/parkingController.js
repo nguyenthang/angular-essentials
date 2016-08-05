@@ -6,7 +6,7 @@ parkingApp.controller('parkingController', function($scope, parkingService,
 	
 	$scope.appTitle = "<b>AngularJS Essentials</b>";
 
-	$scope.cars = [{
+	/*$scope.cars = [{
 		id: 1,
 		plate: "6MBV006",
 		color: "Blue",
@@ -21,7 +21,9 @@ parkingApp.controller('parkingController', function($scope, parkingService,
 		plate: "6MBV116",
 		color: "Green",
 		entrance: "2013-12-09T23:46:15.186Z"
-	}];
+	}];*/
+
+	$scope.cars = [];
 	
 	$scope.colors = ["Gray", "Blue", "Green"];
 	
@@ -67,6 +69,7 @@ parkingApp.controller('parkingController', function($scope, parkingService,
 	var retrieveCars = function(){
 		parkingHttpFacade.getCars().
 		success(function(data, status, headers, config){
+			console.log(data);
 			$scope.cars = data;
 		}).
 		error(function(data, status, headers, config){
