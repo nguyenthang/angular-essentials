@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-var path = require('path'),
-	logger = require('morgan'),
-	bodyParser = require('body-parser'),
-	cookieParser = require('cookie-parser');
-
-=======
 var express = require('express'),
 	bodyParser = require('body-parser'),
 	cookieParser = require('cookie-parser'),
@@ -22,4 +15,3 @@ module.exports = function(app){
 	route(app);
 	return app;
 };
->>>>>>> 410bb987bc7e63f0c6f5499cd2fc7715140088a8
