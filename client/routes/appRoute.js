@@ -13,6 +13,9 @@ parkingApp.config(function($routeProvider, $locationProvider){
 	}).when('/car/:id', {
 		templateUrl: '../views/parking/car.html',
 		controller: 'carController'
+	}).when('/login', {
+		templateUrl: '../views/login/login.html',
+		controller: 'loginController'
 	}).otherwise({
 		redirectTo: '/parking'
 	});

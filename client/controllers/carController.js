@@ -8,6 +8,7 @@ parkingApp.controller("carController", function($scope, $routeParams, parkingHtt
 		$log.info('login to this function' + id);
 		parkingHttpFacade.getCar(id).
 		success(function(data, status){
+			$log.info("Data: " + data);
 			$scope.car = data;
 		}).
 		error(function(data, status){
